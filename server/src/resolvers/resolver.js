@@ -57,8 +57,7 @@ const Resolvers={
       
       try{
          const {input}=args
-         const {precio} = input
-         console.log(precio)
+         const {precio} = input         
          const {id}=args;
          const existeProducto = await Producto.findById(id.toString());
          if(!existeProducto){
