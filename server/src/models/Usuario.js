@@ -3,8 +3,7 @@ const Usuario = new mongoose.Schema({
     email:{
         type:String,
         required:true,
-        trim: true,
-        unique:true
+        trim: true
     },
     password:{
         type:String,
@@ -20,4 +19,4 @@ const Usuario = new mongoose.Schema({
         required:true
     }
 });
-module.exports = new mongoose.model("CatUsuario",Usuario);
+module.exports = new mongoose.model("Usuario",Usuario);

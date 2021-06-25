@@ -50,6 +50,14 @@ const Resolvers={
       }catch(error){
          console.log(error)
       }
+   },
+   obtenerUsuarios:async(_)=>{
+      try{
+         const usuarios = Usuario.find({})
+         return usuarios
+      }catch(error){
+         print(error.message)
+      }
    }
  },
  Mutation:{
