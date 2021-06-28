@@ -3,6 +3,7 @@ const Producto = require('../models/Producto');
 const Usuario = require('../models/Usuario');
 const JWT = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
+var mongoose = require('mongoose');
 const CrearToken = (usuario, palabraSecreta, expiresIn) => {
    const { id, correo, pass } = usuario; 
    return JWT.sign({ id, correo, pass}, palabraSecreta, { expiresIn })
@@ -92,7 +93,7 @@ const Resolvers={
    },
    eliminarProducto:async(_,{id})=>{
       try{
-         const existeProducto = await Producto.findById(id);
+         const existeProducto = await Producto.findById(mongoose.Types.ObjectId(id));
          if (!existeProducto) {
              throw new Error("El producto no ha sido registrado en la base de datos");
          }
