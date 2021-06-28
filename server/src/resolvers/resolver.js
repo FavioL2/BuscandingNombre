@@ -45,10 +45,8 @@ const Resolvers={
       }   
    },
    obtenerDeseados: async(_,args,ctx)=>{
-      try{
-         const productos = Producto.find({usuario: ctx.id})
-         console.log(ctx.id)         
-         console.log(productos)
+      try{         
+         const productos = Producto.find({usuario: ctx.id})         
          return productos
       }catch(error){
          console.log(error)
