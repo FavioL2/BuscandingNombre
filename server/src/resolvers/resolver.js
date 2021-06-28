@@ -12,11 +12,8 @@ const CrearToken = (usuario, palabraSecreta, expiresIn) => {
 const Resolvers={
  Query:{
    leerUsuario:async(_,args,ctx)=>{
-     try{
-      //   console.log(usuario)
-        console.log(ctx.id)
-        const usuario = Usuario.findById(ctx.id)
-        console.log(usuario)
+     try{      
+        const usuario = Usuario.findById(ctx.id)      
         return usuario
      }catch(error){
         console.log(usuario)
@@ -114,9 +111,7 @@ const Resolvers={
       }
       //Hashear Password
       const salt = await bcryptjs.genSalt(10);
-      input.password = await bcryptjs.hash(password, salt)
-      console.log(input)
-      console.log(existeU)
+      input.password = await bcryptjs.hash(password, salt)      
       //Guardar en DB
       try {
          const usuario = new Usuario(input)
