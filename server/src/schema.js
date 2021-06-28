@@ -54,7 +54,7 @@ type Query{
      #--- Productos --
      updatePrecioProducto(id:ID,input:productoInput!): Producto 
      crearProducto(producto:productoInput!):Producto          
-     eliminarProducto(id:String!):String                                                          
+     eliminarProducto(id:ID!):String                                                          
 
      #-- Lista de deseados --
      #elimProducList():String

@@ -91,14 +91,13 @@ const Resolvers={
          console.log(error)
       }      
    },
-   eliminarProducto:async(_,{id})=>{
-      idB = mongoose.Types.ObjectId(id)
+   eliminarProducto:async(_,{id})=>{      
       try{
-         const existeProducto = await Producto.findById(idB);
+         const existeProducto = await Producto.findById(id);
          if (!existeProducto) {
              throw new Error("El producto no ha sido registrado en la base de datos");
          }
-         producto = await Producto.findOneAndDelete({ _id: idB })
+         producto = await Producto.findOneAndDelete({ _id: id })
          return "El producto se ha eliminado con éxito";
       }catch(error){
          console.log(error)
