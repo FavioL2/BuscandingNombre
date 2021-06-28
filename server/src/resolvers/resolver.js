@@ -97,7 +97,7 @@ const Resolvers={
          if (!existeProducto) {
              throw new Error("El producto no ha sido registrado en la base de datos");
          }
-         producto = await Producto.findOneAndDelete({ _id: id })
+         producto = await Producto.findOneAndDelete({ _id: mongoose.Types.ObjectId(id) })
          return "El producto se ha eliminado con éxito";
       }catch(error){
          console.log(error)
