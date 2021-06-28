@@ -3,10 +3,10 @@ const { gql } = require('apollo-server'); //GraphQL para Apollo y Express
 const typeDefs = gql `
  type Usuario{
      id:ID!
-     email:String
-     password:String
-     apellido:String
-     nombre:String
+     email:String!
+     password:String!
+     apellido:String!
+     nombre:String!
  }
  type Producto{
      id:ID!
@@ -19,17 +19,17 @@ const typeDefs = gql `
  }
 
 input productoInput{    
-    nombre:String
-    precio:Float
-    imagen:String
-    url:String
-    tienda:String
+    nombre:String!
+    precio:Float!
+    imagen:String!
+    url:String!
+    tienda:String!
 }
 input usuarioInput{    
-    email:String
-    password:String
-    apellido:String
-    nombre:String
+    email:String!
+    password:String!
+    apellido:String!
+    nombre:String!
 }
 input AutenticarInput {
     email: String!
